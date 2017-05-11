@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+<script>
+  var x="123123201705078765";//这是身份证号用户输入的
+  //选判断位数因为 16位中有英文 所以直接判断内容是不可行的
+  if(x.length==18){
+    //位数是18的时候 只需要判断内容剩一即可
+    if(x*1==x){
+	  //纯数字即位数与内容完全符合身份的要求
+/*	  alert("您输入的是一个有效的十八位身份证号");
+	  if(x[16]%2==0){
+	     alert("她是一位女生");
+	  }
+	  else{
+	     alert("他是一位男生");
+	  }*/
+		//获取当前时间--------------
+		
+		  var date=new Date();//定义一个变量是当前日期DATE（）是一个系统函数用来获取当前的时间
+		  var strDate = date.getDate();//定义一个变量获取当前日期
+		  var month = date.getMonth() + 1;//定义一个变量获取当前月份
+		  var strYear=date.getFullYear() ;//定义一个变量获取当前年
+		  if(strDate<10){
+			strDate="0"+strDate;
+			//当前日期小于10前面+0
+		  }
+		  if(month<10){
+			month="0"+month;
+			//当前月份小于10前面+0
+		  } 
+		//----------------------------
+		  var sfzY=x.substr(6,4);//身份证的年
+		  var sfzM=x.substr(10,2);//身份证的月
+		  var sfzD=x.substr(12,2);//身份证的月 
+		  if(sfzY<"1800"||sfzY>strYear){
+			//如果年份不可以小于1800年
+			
+			alert("身份证号年份不对");
+		  }
+		  else{
+			
+			//此处是身份证的年份对了
+			if((sfzM>0 && sfzM<13)&&(sfzD>0 && sfzD <32)){
+			   //如果身份证月份大于0并且小于13并且日期大于0小于32为有效
+			  
+                 if(sfzY=="2017"){
+				   //如果身份证号为2017年则向下判断月份
+				   if(sfzM==month){
+				     //如果身份证号码月份为当月则向下判读日期
+					 if(sfzD<strDate){
+					    alert("对的");
+						//身份证日期小于当前日期
+					 }
+					 else{
+					   alert("错的")
+					 }
+				   }
+				   else if(sfzM>month){
+				     alert("身份证的月份不能大于当前自然月");
+				   }
+				   else{
+				      alert("对了");
+					  //如果身份证月份大于0并且小于13并且日期大于0小于32为有效
+				   }
+				 }
+				 else{
+				   //1800-2016
+				   alert("对的");
+				 }
+			}
+			else{
+			  alert("月和日有错");
+			}
+			
+		  }
+	}
+	else{
+	  //由于内容进行隐式转换后剩1的结果与原内容不同，即输入的不是纯数字
+	  alert("十八位身份证的内容不对");
+	}
+  }
+  else if(x.length==16){
+    //位数是16的时候，需要判断前都15为数字最后一位为X 或x
+    if(x.substr(0,15)*1==x.substr(0,15)&&(x[15]=="x"||x[15]=="X")){
+	  //十六位的内容 前十五位是纯数字 最后一位是X 或x是对的内容
+	  alert("您输入的是一个有效的十六位身份证号")
+	  if(x[14]%2==0){
+	     alert("她是一位女生");
+	  }
+	  else{
+	     alert("他是一位男生");
+	  }	  
+	}
+	else{
+	  alert("十六位身份证内容格式不对")
+	}
+  }
+  else{
+    //位数就是错的直接报错
+    alert("输入的身份证位数不对");
+  }
+
+</script>
+</body>
+</html>

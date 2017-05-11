@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+<script>
+/*  for(i=1;i<=3;i++){
+     alert(i)
+     document.write("<h1>asdf"+i+"</h1>");
+  }*/
+  /*
+  for(循环控制表达式)
+  for(里面的变量叫循环变量)
+  
+  for    (  i=1;       i<=3;          i++           )
+  关键字  （  给初值;    判断表达式      步进值表达式     ）
+  
+  */
+  
+/*  for(i=10;i>=1;i--){
+  
+    document.write("<h1>asdf"+i+"</h1>");
+  }
+*/
+/*  for(i=1;i<=100;i+=2){
+    document.write("<h1>asdf"+i+"</h1>");
+  }*/
+  
+  
+//打印一到一百之间所有可以被七整除的数
+var y=1000
+for(i=1;i<=y;i++){
+  x=i+"";
+  if(i%7==0||x[x.length-1]=="7"){
+    document.write("<h1>"+i+"</h1>");
+	
+  }
+  if(x[1]=="7"){
+    document.write("<h1 style='color:#FF0000'>"+"&nbsp;&nbsp;&nbsp;"+i+"</h1>");
+	
+  }  
+
+}  
+
+/*
+  length  数组
+  "1"   1   
+  "10"  2  1
+  "100" 3  2
+  "1000"4  3
+  
+  
+*/
+</script>
+
+</body>
+</html>

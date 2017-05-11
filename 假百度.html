@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+<form id="form1" action="http://www.baidu.com/s"><!--form表单用向服务器传输数据-->
+  <input type="text" id="text1" name="wd" /><!--建立表单-->
+  <input type="button" id="button1" value="百度搜索" onclick="button1_click();"/><!--建立一个按钮并建立单击事件button1_click-->
+</form>
+<script>
+ function button1_click(){
+    document.getElementById("form1").submit();//把id为form1的表单数据提交到 Web 服务器
+ }
+</script>
+
+
+<input type="text" id="text2"/>
+<input type="text" id="text3"/>
+<input type="text" id="text4"/>
+<input type="button" id="button2" value="按钮2" onclick="button2_click();"/>
+<script>
+  function button2_click(){
+     document.getElementById("text3").focus();//为id为text3获得焦点
+  }
+</script>
+</body>
+</html>

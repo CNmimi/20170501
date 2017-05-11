@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+<script>
+ //判断输入的数是否为质数
+ //只能被1和它本身整除的数是质数
+ //12357  11 13
+ 
+ var x=7;//用户输入的是4
+ var y="未整除";//定义一个变量起到标识的做用，Y默认等于0 但是如在下列计算中X被 2 到X-1中的仍何一个整数了则证明X不是一个质数
+ // 同理当X被整理时我们将Y的值从0改写为1  在循环结束后对Y 的值进行判断 ，如果Y的值从未被改变成1 即X从未被2至X-1
+ //中的仍何一个数整除过。所以他是质数。但反之如果Y变成了1则整明在循环执行中。X曾经被整理除过。故其不是质数
+ for(i=2;i<=x-1;i++){//I循环 次数2到X-1 例用户输入的是 5  循还执行次数为  2 3 4  三次
+ 
+   if(x%i==0){//X是用户输入的数如果被 例如X等4被  2  3  中任何一个数整除则修改Y值为1
+     //只要整除了就不是质数
+	 y="已整除";
+   }
+
+ }
+ 
+ 
+ //循环执行后最终的结果判断
+ 
+ if(y=="已整除"){
+   alert("你输入的不是质数");
+ }
+ else{
+   alert("你输入的是质数");
+ }
+</script>
+</body>
+</html>

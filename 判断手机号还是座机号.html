@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+<input type="text" id="text1" />
+<input type="button" id="button1" value="判断" onclick="pddh();"/>
+<script>
+  function pddh(){
+    var usrVal=document.getElementById("text1").value;//定义变量usrVal并为其赋值id为text1的值
+	if(usrVal.length==8){//如果变量usrVal的长度是8则为座机
+	   alert("座机");
+	}
+	else if(usrVal.length==11){//又如果变量usrVal字符串长度为11则为手机
+	   alert("手机");
+	}
+	else{//
+	   alert("不对");
+	} 
+  }
+</script>
+</body>
+</html>
